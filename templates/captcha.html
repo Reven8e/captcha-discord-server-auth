@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+  body {
+      background-color: #2c2f33;
+  }
+</style>
+<title>Captcha verfication</title>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+{% endblock head %}
+
+{% block body %}
+<div class="container">
+<div class="row main" style="padding-top:250px;">
+ <div class="main-login main-center">
+ <h4><center>Captcha verfication</center></h4>
+        <p>
+         {% with messages = get_flashed_messages() %}
+           {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-dark">
+             <strong>{{ message }}</strong>
+           </div>
+          {% endfor %}
+           {% endif %}
+         {% endwith %}
+        </p>
+<form method="POST"> 
+    <div class="g-recaptcha" data-sitekey="{{ sitekey }}"></div> <br/> 
+    <input type="submit" value="submit" class="btn btn-secondary btn-lg btn-block login-button">
+</form>
+</div>
+</div>
+</div>
+<style>
+.form-group{
+ margin-bottom: 15px;
+}
+
+label{
+ margin-bottom: 15px;
+}
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+.main-login{
+  background-color: #f5f5f5;
+    padding:500px;width:600px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+span.input-group-addon i {
+    color: #2c2f33;
+    font-size: 17px;padding:10px;
+}
+.form-control {
+    height: auto!important;
+padding: 8x 12px !important;
+}
+.input-group {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+.main-center{
+  margin-top: 30px;
+  margin: 0 auto;
+    padding: 10px 40px;
+    text-shadow: none;
+ -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+
+}
+</style>
+{% endblock body %}
