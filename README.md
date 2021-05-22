@@ -9,7 +9,8 @@
 - Type "Python3" in terminal/cmd inside the working path.
 - from app import db
 - db.create_all()
-- Follow The Comments Inside Code!
+- Get a Captcha Keys [here](google.com/recaptcha/about/)
+- Follow The Comments Inside Code and Insert The Keys!
 - python3 app.py
 - python3 bot.py
 
@@ -22,4 +23,3 @@
 - Discord - Reven8e.sh#9290
 - Email - yuval@bogan.cool
 - [My Website](https://www.bogan.cool)
-
